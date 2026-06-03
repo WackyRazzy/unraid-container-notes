@@ -1,8 +1,4 @@
 <?php
-/**
- * Container Notes Plugin â€” API
- * Saves and loads per-container notes to /boot/config/plugins/container-notes/notes.json
- */
 $notesDir  = '/boot/config/plugins/container-notes';
 $notesFile = $notesDir . '/notes.json';
 if (!is_dir($notesDir)) mkdir($notesDir, 0755, true);
@@ -15,9 +11,7 @@ if ($method === 'GET') {
 if ($method === 'POST') {
     $body = json_decode(file_get_contents('php://input'), true);
     if (!isset($body['container']) || !isset($body['note'])) {
-        http_response_code(400);
-        echo json_encode(['error' => 'Missing container or note field']);
-        exit;
+        http_response_code(400); echo json_encode(['error'=>'bad input']); exit;
     }
     $notes = file_exists($notesFile) ? (json_decode(file_get_contents($notesFile), true) ?: []) : [];
     $note  = trim($body['note']);
@@ -28,4 +22,4 @@ if ($method === 'POST') {
     exit;
 }
 http_response_code(405);
-echo json_encode(['error' => 'Method not allowed']);
+echo json_encode(['error' => 'method not allowed']);
