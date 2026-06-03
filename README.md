@@ -8,12 +8,12 @@ A lightweight plugin for [Unraid](https://unraid.net) that adds a persistent, ed
 
 ## Features
 
-- ðŸ“ **Per-container notes** â€” each container has its own independent note
-- ðŸ“ **FolderView2 support** â€” notes appear on folder group rows as well as individual containers
-- ðŸ’¾ **Persistent storage** â€” notes saved to `/boot/config/plugins/container-notes/notes.json` (survives reboots)
-- ðŸŽ¨ **Theme-aware** â€” uses Unraid's own CSS variables, works on all themes (white, black, grey, etc.)
-- âš¡ **No page reload needed** â€” notes save instantly via background API call
-- âŒ¨ï¸ **Keyboard shortcuts** â€” `Ctrl+Enter` to save, `Escape` to cancel
+- Per-container notes -- each container has its own independent note
+- FolderView2 support -- notes appear on folder group rows as well as individual containers
+- Persistent storage -- notes saved to `/boot/config/plugins/container-notes/notes.json` (survives reboots)
+- Theme-aware -- uses Unraid's own CSS variables, works on all themes (white, black, grey, etc.)
+- No page reload needed -- notes save instantly via background API call
+- Keyboard shortcuts -- `Ctrl+Enter` to save, `Escape` to cancel
 
 ---
 
@@ -21,7 +21,7 @@ A lightweight plugin for [Unraid](https://unraid.net) that adds a persistent, ed
 
 Each container row gets a slim note bar directly beneath it:
 
-- **No note yet:** a faint grey *"Add a noteâ€¦"* prompt with a pencil icon (âœŽ)
+- **No note yet:** a faint grey *"Add a note..."* prompt with a pencil icon
 - **Note saved:** the note text is shown in full, bold dark text; pencil turns orange
 - **Editing:** an inline text area appears with Save / Cancel buttons
 
@@ -31,9 +31,9 @@ Each container row gets a slim note bar directly beneath it:
 
 ### One-line install (recommended)
 
-Open the Unraid terminal (`â‰¡` â†’ Terminal) and paste the contents of [`install.sh`](./install.sh), then press **Enter**.
+Open the Unraid terminal and paste the contents of [`install.sh`](./install.sh), then press **Enter**.
 
-Once it prints `âœ“ Done!`, do a hard-refresh of your Docker page: **Ctrl+Shift+R** in your browser.
+Once it prints `Done!`, do a hard-refresh of your Docker page: **Ctrl+Shift+R** in your browser.
 
 ### What the installer does
 
@@ -68,9 +68,9 @@ Example:
 
 ```json
 {
-  "Nextcloud": "Main cloud storage â€” port 443 via nginx proxy",
-  "folder:03 â€“ Core Service": "All critical self-hosted services. Don't auto-update without testing.",
-  "AdGuard-Home": "DNS filtering â€” fallback to Quad9 if this goes down"
+  "Nextcloud": "Main cloud storage -- port 443 via nginx proxy",
+  "folder:03 - Core Service": "All critical self-hosted services. Don't auto-update without testing.",
+  "AdGuard-Home": "DNS filtering -- fallback to Quad9 if this goes down"
 }
 ```
 
@@ -82,10 +82,10 @@ Folder notes are keyed with a `folder:` prefix to avoid clashing with container 
 
 | Unraid Version | FolderView2 | Status |
 |---|---|---|
-| 7.3 | âœ… Yes | âœ… Tested & working |
-| 7.x | âœ… Yes | âœ… Should work |
-| 7.x | âŒ No | âœ… Should work |
-| 6.x | Any | âš ï¸ Not tested |
+| 7.3 | Yes | Tested and working |
+| 7.x | Yes | Should work |
+| 7.x | No  | Should work |
+| 6.x | Any | Not tested |
 
 ---
 
@@ -93,23 +93,23 @@ Folder notes are keyed with a `folder:` prefix to avoid clashing with container 
 
 ```
 container-notes/
-â”œâ”€â”€ install.sh                          â† Run this on your Unraid server
-â””â”€â”€ source/
-    â””â”€â”€ usr/local/emhttp/plugins/container-notes/
-        â”œâ”€â”€ container-notes.js          â† DOM injection & UI logic
-        â”œâ”€â”€ container-notes.page        â† Unraid plugin page definition
-        â””â”€â”€ notes_api.php               â† Save/load API endpoint
++-- install.sh                          <- Run this on your Unraid server
++-- source/
+    +-- usr/local/emhttp/plugins/container-notes/
+        +-- container-notes.js          <- DOM injection & UI logic
+        +-- container-notes.page        <- Unraid plugin page definition
+        +-- notes_api.php               <- Save/load API endpoint
 ```
 
 ---
 
 ## Credits
 
-Built by [Wayne Lewis](https://github.com/waynelewis) with assistance from Claude (Anthropic).
+Built by [WackyRazzy](https://github.com/WackyRazzy) with assistance from Claude (Anthropic).
 Inspired by the need to keep track of 40+ Docker containers without losing my mind.
 
 ---
 
 ## License
 
-MIT â€” do whatever you like with it.
+MIT -- do whatever you like with it.
