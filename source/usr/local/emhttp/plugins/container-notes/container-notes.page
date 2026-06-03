@@ -1,0 +1,4 @@
+Menu="Docker"
+Icon="sticky-note"
+---
+<script src="/plugins/container-notes/container-notes.js"></script>
